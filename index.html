@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliffneck Kitchenware, Household Items & Deco</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background: var(--light);
+            overflow-x: hidden;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: orange;
+            --secondary: #4ecdc4;
+            --accent: #ffd166;
+            --dark: #2b2d42;
+            --light: #f8f9fa;
+            --white: #fff;
+            --transition: all 0.3s cubic-bezier(.19,1,.22,1);
+            --shadow: 0 8px 32px rgba(44, 62, 80, 0.13);
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+            
+        }
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 10px 0;
+            transition: var(--transition);
+            animation: fadeInDown 0.7s;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-35px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: 1px;
+        }
+        .logo i { color: var(--accent); }
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        nav ul li { margin-left: 30px; }
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+            padding: 4px 0;
+        }
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; bottom: -4px;
+            width: 0; height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--primary);
+        }
+        nav ul li a:hover:after,
+        nav ul li a.active:after {
+            width: 100%;
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+        /* Hero Section with animated gradient overlay */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('cliffkitch/1.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 90px;
+            position: relative;
+            animation: fadeInHero 1.25s;
+        }
+        @keyframes fadeInHero {
+            from { opacity: 0; transform: scale(1.05);}
+            to { opacity: 1; transform: scale(1);}
+        }
+        .hero-content {
+            max-width: 700px;
+            margin: auto;
+            animation: fadeIn 1.5s;
+            background: rgba(43,45,66,0.57);
+            border-radius: 18px;
+            padding: 38px 20px 34px;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(3px);
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.3rem;
+            letter-spacing: 1px;
+            animation: slideUp 1s;
+            color: orange;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(28px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 13px 28px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--primary);
+            margin-right: 10px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(255,107,107,0.07);
+        }
+        .btn:last-child { margin-right: 0; }
+        .btn:hover, .btn:focus {
+            background: transparent;
+            color: var(--primary);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+            outline: none;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        .btn-outline:hover, .btn-outline:focus {
+            background: white;
+            color: var(--dark);
+        }
+        .section-title {
+            text-align: center;
+            margin: 5rem 0 2.5rem;
+            position: relative;
+            letter-spacing: 1px;
+            animation: fadeIn 1.6s;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            left: 50%; transform: translateX(-50%);
+            bottom: -13px;
+            width: 70px; height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        .menu-section, .about-section {
+            padding: 60px 0 40px 0;
+            background: #fff;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 32px;
+            margin-top: 35px;
+        }
+        .menu-item {
+            background: var(--light);
+            padding: 24px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 360px;
+            position: relative;
+            transition: box-shadow 0.3s, transform 0.3s;
+            animation: floatIn 1.2s;
+            overflow: hidden;
+        }
+        .menu-item:hover {
+            box-shadow: 0 10px 30px rgba(255,107,107,0.14), 0 2px 10px rgba(76,205,196,0.07);
+            transform: translateY(-8px) scale(1.025);
+        }
+        @keyframes floatIn {
+            from {opacity:0; transform:translateY(35px);}
+            to {opacity:1; transform:translateY(0);}
+        }
+        .menu-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            background: #eee;
+            box-shadow: 0 2px 14px rgba(76,205,196,0.12);
+            animation: fadeIn 1.2s;
+            transition: transform 0.5s;
+        }
+        .menu-item:hover img {
+            transform: scale(1.1);
+        }
+        .menu-item h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+            letter-spacing: .5px;
+        }
+        .menu-item p {
+            font-size: 0.98rem;
+            margin-bottom: 10px;
+        }
+        .order-product-btn {
+            margin-top: auto;
+            background: var(--accent);
+            border: 2px solid var(--accent);
+            color: var(--dark);
+            font-weight: 600;
+            transition: background 0.2s, color 0.2s, box-shadow 0.3s;
+            box-shadow: 0 2px 6px rgba(255,209,102,0.12);
+        }
+        .order-product-btn:hover, .order-product-btn:focus {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            box-shadow: 0 8px 24px rgba(255,107,107,0.21);
+        }
+        
+        /* --- NEW STYLES FOR UNSTYLED SECTIONS --- */
+        
+        /* Filter Buttons */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        .filter-btn {
+            padding: 8px 20px;
+            background: var(--light);
+            border: 2px solid var(--light);
+            border-radius: 50px;
+            color: var(--dark);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+        
+        /* Parallax Counter Section */
+        .parallax-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('cliffkitch/1.jpg') fixed center/cover;
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+        .counter {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .counter-item {
+            padding: 20px;
+        }
+        .counter-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        .counter-text {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background: var(--light);
+            padding: 80px 0;
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        .stars {
+            color: var(--accent);
+        }
+        
+        /* Locations Section */
+        .locations {
+            padding: 80px 0;
+            background: white;
+        }
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .location-card {
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        .location-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .location-img {
+            height: 180px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+        .location-info {
+            padding: 25px;
+            text-align: center;
+        }
+        .location-info h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .location-info p {
+            margin-bottom: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-column h3 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+        .footer-column p {
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+        .social-icons a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        .footer-column i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        #newsletterEmail {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-family: inherit;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.8;
+        }
+        
+        /* Cart Panel */
+        .cart-panel {
+            position: fixed;
+            top: 0;
+            right: -350px;
+            width: 350px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            z-index: 1001;
+            transition: var(--transition);
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .cart-panel.open {
+            right: 0;
+        }
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+        .cart-item {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .cart-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 15px;
+        }
+        .cart-item-details {
+            flex-grow: 1;
+        }
+        .cart-item h4 {
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        .cart-item-details p {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        .qty-btn, .remove-btn {
+            background: #f1f3f6;
+            border: 1px solid #eee;
+            padding: 2px 7px;
+            font-size: 0.9rem;
+            border-radius: 5px;
+            margin: 0 2px;
+            cursor: pointer;
+        }
+        .qty-btn:active, .remove-btn:active {
+            background: var(--primary);
+            color: #fff;
+        }
+        .cart-total {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px solid #eee;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        /* Floating Cart Button */
+        .floating-cart {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(255,107,107,0.3);
+            cursor: pointer;
+            z-index: 999;
+            transition: var(--transition);
+        }
+        .floating-cart:hover {
+            transform: scale(1.1);
+        }
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--accent);
+            color: var(--dark);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+        
+        /* Order Modal */
+        .order-modal-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1002;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        .order-modal-bg.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .order-modal {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        .order-modal h3 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        .order-modal label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .order-modal input, 
+        .order-modal textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        .order-modal textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .mpesa-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .mpesa-info strong {
+            margin-bottom: 5px;
+            display: block;
+        }
+        .order-success {
+            background: #4ecdc4;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        /* --- Mobile Improved Styles --- */
+        @media (max-width: 768px) {
+            .container { padding: 0 10px; }
+            .header-container { padding: 0 6px; }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%; left: 0; width: 100vw;
+                background: white;
+                box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+                padding: 16px 0;
+                z-index: 999;
+            }
+            nav ul.show { display: flex; }
+            nav ul li {
+                margin: 13px 0;
+                text-align: center;
+            }
+            .mobile-menu-btn { display: block; }
+            .hero h1 { font-size: 1.4rem; }
+            .hero-content { padding: 16px 2vw; }
+            .menu-section, .about-section { padding: 32px 0 24px 0; }
+            .section-title { margin: 2.2rem 0 1.4rem; }
+            .counter { grid-template-columns: repeat(2, 1fr); }
+            .counter-number { font-size: 2rem; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .order-modal {
+                margin: 24px 0 24px 0;
+                padding: 12px 3vw 14px 3vw;
+                max-width: 98vw;
+                width: 98vw;
+            }
+            .hero-content { padding: 7vw 4vw; }
+            .footer-content { grid-template-columns: 1fr; gap: 20px;}
+            .locations-grid, .menu-grid { grid-template-columns: 1fr;}
+            .testimonial-grid { grid-template-columns: 1fr;}
+            .counter { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 400px) {
+            .order-modal {
+                padding: 3vw 2vw 4vw 2vw;
+            }
+            .hero-content { padding: 4vw 2vw; }
+            .filter-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        @media (max-width: 576px) {
+            .container { padding: 0 4px; }
+            .footer-content { grid-template-columns: 1fr; gap: 13px;}
+            .locations-grid { grid-template-columns: 1fr;}
+            .menu-grid { grid-template-columns: 1fr;}
+            .hero-content { padding: 0 2px; }
+        }
+        /* Make cart and modal more mobile-friendly */
+        .cart-panel {
+            width: 350px;
+            max-width: 97vw;
+        }
+        @media (max-width: 500px) {
+            .cart-panel {
+                width: 100vw;
+                right: -100vw;
+                padding: 8vw 2vw 12vw 2vw;
+            }
+            .cart-panel.open {
+                right: 0;
+            }
+            .floating-cart {
+                width: 50px; height: 50px; font-size: 1.1rem; bottom: 16px; right: 16px;
+            }
+        }
+        /* General improvements */
+        .testimonial-grid, .locations-grid, .footer-content {
+            width: 100%;
+        }
+        .cart-item h4 { font-size: 1rem; }
+        .cart-item-details p, .cart-item-details span { font-size: 0.93rem; }
+        
+        /* Accessibility improvements */
+        .order-modal:focus { outline: 2px solid var(--primary);}
+        button:focus, a:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+        
+        /* Animation utilities */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .fade-in {
+            animation: fadeIn 1s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo" aria-label="Cliffneck Kitchenware, Household Items & Deco Home">
+                <i class="fas fa-utensils"></i> Cliffneck kitchenware, Household Items & Deco
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#menu">Products</a></li>
+                    <li><a href="#locations">Stores</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="cart-icon">
+                        <a href="#cart" id="cartToggle">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                    <li><a href="#menu" class="btn">Shop Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Floating Cart Button -->
+    <div class="floating-cart" id="floatingCart">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+    </div>
+
+    <!-- Cart Panel -->
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-modal" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart-message">Your cart is empty</p>
+        </div>
+        <div class="cart-total" id="cartTotal" style="display: none;">
+            Total: $<span>0</span>
+        </div>
+        <button class="btn" id="checkoutBtn" style="display: none; width: 100%; margin-top: 20px;">Checkout</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Cliffneck: Kitchenware, Household Items & Deco</h1>
+            <p>Upgrade your home and kitchen with quality utensils, beautiful deco, and household solutions. Shop from our physical or online store for premium products and fast delivery.</p>
+            <div>
+                <a href="#menu" class="btn">Browse Products</a>
+                <a href="#locations" class="btn btn-outline">Find a Store</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <h2 class="section-title">Our Featured Products</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Products</button>
+                <button class="filter-btn" data-filter="kitchenware">Kitchenware</button>
+                <button class="filter-btn" data-filter="decor">Home Decor</button>
+                <button class="filter-btn" data-filter="household">Household</button>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item" data-product="Nature Mat Decor" data-category="decor">
+                    <img src="cliffkitch/1.jpg" alt="Nature Mat Decor">
+                    <h4>Nature Mat Decor</h4>
+                    <p>Artificial green mat with flower accents for wall or floor decoration.</p>
+                    <span>Price: $20</span>
+                    <button class="btn order-product-btn" data-product="Nature Mat Decor" data-price="20" data-image="cliffkitch/1.jpg">Add to Cart</button>
+                </div>
+                <div class="menu-item" data-product="Floral Wall Mat" data-category="decor">
+                    <img src="cliffkitch/2.jpg" alt="Floral Wall Mat">
+                    <h4>Floral Wall Mat</h4>
+                    <p>Greenery decor mat with colorful mini flowers, ideal for interior or patio ambiance.</p>
+                    <span>Price: $22</span>
+                    <button class="btn order-product-btn" data-product="Floral Wall Mat" data-price="22" data-image="cliffkitch/2.jpg">Add to Cart</button>
+                </div>
+                <div class="menu-item" data-product="Decorative Vase with Flowers" data-category="decor">
+                    <img src="cliffkitch/3.jpg" alt="Decorative Vase with Flowers">
+                    <h4>Decorative Vase with Flowers</h4>
+                    <p>Elegant glass vase with artificial vibrant floral arrangement for tables or shelves.</p>
+                    <span>Price: $30</span>
+                    <button class="btn order-product-btn" data-product="Decorative Vase with Flowers" data-price="30" data-image="cliffkitch/3.jpg">Add to Cart</button>
+                </div>
+                <div class="menu-item" data-product="16 Piece Kitchen Utensil Set" data-category="kitchenware">
+                    <img src="cliffkitch/4.jpg" alt="16 Piece Kitchen Utensil Set">
+                    <h4>16 Piece Kitchen Utensil Set</h4>
+                    <p>Complete silicone kitchen utensil set in holder, includes spatulas, whisk, tongs and more.</p>
+                    <span>Price: $35</span>
+                    <button class="btn order-product-btn" data-product="16 Piece Kitchen Utensil Set" data-price="35" data-image="cliffkitch/4.jpg">Add to Cart</button>
+                </div>
+                <div class="menu-item" data-category="kitchenware"><img src="cliffkitch/5.jpg" alt="Stainless Steel Cookware Set"><h4>Stainless Steel Cookware Set</h4><p>10-piece premium cookware set for your kitchen</p><span>Price: $120</span><button class="btn order-product-btn" data-product="Stainless Steel Cookware Set" data-price="120" data-image="cliffkitch/5.jpg">Add to Cart</button></div>
+                <div class="menu-item" data-category="household"><img src="cliffkitch/6.jpg" alt="Storage Solutions"><h4>Storage Solutions</h4><p>Elegant storage containers for organized living</p><span>Price: $45</span><button class="btn order-product-btn" data-product="Storage Solutions" data-price="45" data-image="cliffkitch/6.jpg">Add to Cart</button></div>
+                <div class="menu-item" data-category="decor"><img src="cliffkitch/7.jpg" alt="Wall Art"><h4>Wall Art</h4><p>Modern wall art to enhance your home's aesthetic</p><span>Price: $55</span><button class="btn order-product-btn" data-product="Wall Art" data-price="55" data-image="cliffkitch/7.jpg">Add to Cart</button></div>
+                <div class="menu-item" data-category="kitchenware"><img src="cliffkitch/8.jpg" alt="Cutlery Set"><h4>Cutlery Set</h4><p>24-piece premium cutlery set for elegant dining</p><span>Price: $75</span><button class="btn order-product-btn" data-product="Cutlery Set" data-price="75" data-image="cliffkitch/8.jpg">Add to Cart</button></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Counter Section -->
+    <section class="parallax-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Why Choose Cliffneck?</h2>
+            <div class="counter">
+                <div class="counter-item">
+                    <div class="counter-number" data-target="5000">0</div>
+                    <div class="counter-text">Happy Customers</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" data-target="1200">0</div>
+                    <div class="counter-text">Products</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" data-target="15">0</div>
+                    <div class="counter-text">Years Experience</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" data-target="98">0</div>
+                    <div class="counter-text">% Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <h2 class="section-title">About Cliffneck</h2>
+            <p style="max-width: 800px; margin: 0 auto 30px; text-align: center;">
+                Cliffneck specializes in kitchenware, household items, and decoration. Find quality utensils, beautiful home décor, and practical home essentials both in-store and online. We are committed to affordable, stylish, and lasting products for every home.
+            </p>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h4>Quality Assurance</h4>
+                    <p>All our products are rigorously tested for durability and performance, backed by our satisfaction guarantee.</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Expert Advice</h4>
+                    <p>Our team is passionate about home design and always ready to help you choose the best for your space.</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Sustainable Choices</h4>
+                    <p>We offer a range of eco-friendly kitchenware and décor for greener, healthier living.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The quality of Cliffneck products is exceptional. I've been using their kitchenware for years and they still look brand new!"
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Johnson">
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Their home decor items transformed my living space. The delivery was quick and the products exceeded my expectations."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Kim">
+                        <div>
+                            <h4>Michael Kim</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Excellent customer service and beautiful products. Cliffneck is my go-to for all household items and gifts."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emma Roberts">
+                        <div>
+                            <h4>Emma Roberts</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section class="locations" id="locations">
+        <div class="container">
+            <h2 class="section-title">Find Cliffneck</h2>
+            <div class="locations-grid">
+                <div class="location-card" data-location="Physical Store">
+                    <div class="location-img"><i class="fas fa-store"></i></div>
+                    <div class="location-info">
+                        <h3>Physical Store</h3>
+                        <p>Garden City Mall, Nairobi, Kenya</p>
+                        <a href="#" class="btn btn-outline">View Store</a>
+                        <button class="btn order-btn" data-country="Physical Store">Order Now</button>
+                    </div>
+                </div>
+                <div class="location-card" data-location="Online Store">
+                    <div class="location-img"><i class="fas fa-globe"></i></div>
+                    <div class="location-info">
+                        <h3>Online Store</h3>
+                        <p>Order through WhatsApp or our Website — Delivery countrywide</p>
+                        <a href="#" class="btn btn-outline">Shop Online</a>
+                        <button class="btn order-btn" data-country="Online Store">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Modal (shared for both products and stores) -->
+    <div class="order-modal-bg" id="orderModalBg">
+        <div class="order-modal" id="orderModal" tabindex="0">
+            <button class="close-modal" id="closeOrderModal" aria-label="Close">&times;</button>
+            <h3 id="orderTitle">Order Kitchenware</h3>
+            <div class="mpesa-info" id="mpesaInfo" style="display:none;">
+                <strong>Pay via M-PESA</strong>
+                <span>Paybill: <b>123456</b></span>
+                <span>Account: <b>CLIFFNECK</b></span>
+                <span id="mpesaAmount"></span>
+                <span style="color:#2b2d42;font-size:0.95em;">Please complete payment before confirming your order.</span>
+            </div>
+            <form id="orderForm" method="POST" action="https://formspree.io/f/mldpevky">
+                <input type="hidden" name="location" id="locationInput">
+                <input type="hidden" name="product" id="productInput">
+                <input type="hidden" name="amount" id="amountInput">
+                <label for="fullname">Full Name</label>
+                <input type="text" name="fullname" id="fullname" required autocomplete="off">
+                <label for="phone">Phone Number</label>
+                <input type="tel" name="phone" id="phone" required autocomplete="off">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="orderEmail" required autocomplete="off">
+                <label for="address">Shipping Address</label>
+                <textarea name="address" id="address" required autocomplete="off"></textarea>
+                <label for="orderDetails">Products To Order</label>
+                <textarea name="orderDetails" id="orderDetails" required autocomplete="off"></textarea>
+                <button type="submit" class="btn" id="orderConfirmBtn">Confirm Order</button>
+                <div class="order-success" id="orderSuccessMsg" style="display:none;">Thank you! Your order has been placed.</div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Cliffneck</h3>
+                    <p>Kitchenware, household items and decoration for every home and style.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#menu">Products</a></li>
+                        <li><a href="#locations">Stores</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Garden City Mall, Nairobi, Kenya</p>
+                    <p><i class="fas fa-phone"></i> +254 700 123456</p>
+                    <p><i class="fas fa-envelope"></i> info@cliffneck.com</p>
+                </div>
+                <div class="footer-column" id="newsletterColumn">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for home tips, new arrivals, and exclusive offers.</p>
+                    <form id="newsletterForm" method="POST" action="https://formspree.io/f/mldpevky">
+                        <input type="email" name="email" id="newsletterEmail" placeholder="Your Email" required aria-label="Email address">
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                    <div class="newsletter-success" id="newsletterSuccess" style="display:none;"></div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Cliffneck Kitchenware, Household Items & Deco. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Responsive Navigation
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('nav ul');
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+            const isOpen = navMenu.classList.contains('show');
+            menuBtn.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        // Smooth scroll and nav highlight
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === "#" || !document.querySelector(targetId)) return;
+                e.preventDefault();
+                const targetElement = document.querySelector(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - 75,
+                    behavior: 'smooth'
+                });
+                if (navMenu.classList.contains('show')) {
+                    navMenu.classList.remove('show');
+                    menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                }
+                document.querySelectorAll('nav ul li a').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navMenu.classList.contains('show')) {
+                navMenu.classList.remove('show');
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                menuBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Scroll Animations for Location Cards
+        const locationCards = document.querySelectorAll('.location-card');
+        function checkScroll() {
+            const triggerBottom = window.innerHeight * 0.85;
+            locationCards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                if (cardTop < triggerBottom) card.classList.add('visible');
+            });
+        }
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('DOMContentLoaded', checkScroll);
+
+        // --- CART FUNCTIONALITY ---
+        let cart = [];
+        const cartCount = document.querySelectorAll('.cart-count');
+        const cartItems = document.getElementById('cartItems');
+        const cartTotal = document.getElementById('cartTotal');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const cartPanel = document.getElementById('cartPanel');
+        const floatingCart = document.getElementById('floatingCart');
+        const cartToggle = document.getElementById('cartToggle');
+        const closeCart = document.getElementById('closeCart');
+
+        // Add to cart functionality
+        document.querySelectorAll('.order-product-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const product = this.getAttribute('data-product');
+                const price = this.getAttribute('data-price');
+                const image = this.getAttribute('data-image');
+                
+                // Check if product already in cart
+                const existingItem = cart.find(item => item.product === product);
+                
+                if (existingItem) {
+                    existingItem.quantity++;
+                } else {
+                    cart.push({
+                        product,
+                        price: parseFloat(price),
+                        image,
+                        quantity: 1
+                    });
+                }
+                
+                updateCart();
+                showNotification(`${product} added to cart!`);
+            });
+        });
+
+        // Update cart UI
+        function updateCart() {
+            // Update cart count
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.forEach(count => count.textContent = totalItems);
+            
+            // Update cart items
+            cartItems.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="empty-cart-message">Your cart is empty</p>';
+                cartTotal.style.display = 'none';
+                checkoutBtn.style.display = 'none';
+            } else {
+                let total = 0;
+                
+                cart.forEach((item, index) => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <img src="${item.image}" alt="${item.product}">
+                        <div class="cart-item-details">
+                            <h4>${item.product}</h4>
+                            <p>$${item.price} x ${item.quantity} = $${itemTotal.toFixed(2)}</p>
+                            <div>
+                                <button class="qty-btn" data-index="${index}" data-action="decrease">-</button>
+                                <span>${item.quantity}</span>
+                                <button class="qty-btn" data-index="${index}" data-action="increase">+</button>
+                                <button class="remove-btn" data-index="${index}">Remove</button>
+                            </div>
+                        </div>
+                    `;
+                    
+                    cartItems.appendChild(cartItem);
+                });
+                
+                // Update total
+                cartTotal.querySelector('span').textContent = total.toFixed(2);
+                cartTotal.style.display = 'block';
+                checkoutBtn.style.display = 'block';
+                
+                // Add event listeners to quantity buttons
+                document.querySelectorAll('.qty-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const index = parseInt(this.getAttribute('data-index'));
+                        const action = this.getAttribute('data-action');
+                        
+                        if (action === 'increase') {
+                            cart[index].quantity++;
+                        } else if (action === 'decrease') {
+                            if (cart[index].quantity > 1) {
+                                cart[index].quantity--;
+                            } else {
+                                cart.splice(index, 1);
+                            }
+                        }
+                        
+                        updateCart();
+                    });
+                });
+                
+                // Add event listeners to remove buttons
+                document.querySelectorAll('.remove-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const index = parseInt(this.getAttribute('data-index'));
+                        cart.splice(index, 1);
+                        updateCart();
+                    });
+                });
+            }
+        }
+
+        // Cart panel toggle
+        floatingCart.addEventListener('click', toggleCart);
+        cartToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleCart();
+        });
+        
+        closeCart.addEventListener('click', closeCartPanel);
+
+        function toggleCart() {
+            cartPanel.classList.toggle('open');
+        }
+        function closeCartPanel() {
+            cartPanel.classList.remove('open');
+        }
+
+        // Checkout functionality
+        checkoutBtn.addEventListener('click', function() {
+            closeCartPanel();
+            
+            // Prepare order details
+            const orderDetailsStr = cart.map(item => 
+                `${item.product} (Qty: ${item.quantity}, Price: $${item.price})`
+            ).join(', ');
+            
+            const totalAmount = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            
+            // Show order modal
+            orderTitle.textContent = 'Checkout';
+            locationInput.value = 'Online Store';
+            productInput.value = 'Multiple Products';
+            amountInput.value = totalAmount;
+            orderForm.reset();
+            orderDetails.value = orderDetailsStr;
+            mpesaInfo.style.display = 'block';
+            mpesaAmount.innerHTML = 'Amount: <b>$' + totalAmount.toFixed(2) + '</b>';
+            orderSuccessMsg.style.display = "none";
+            orderForm.style.display = "block";
+            orderModalBg.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            orderModal.focus();
+        });
+
+        // Show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.position = 'fixed';
+            notification.style.bottom = '20px';
+            notification.style.left = '50%';
+            notification.style.transform = 'translateX(-50%)';
+            notification.style.backgroundColor = 'var(--primary)';
+            notification.style.color = 'white';
+            notification.style.padding = '10px 20px';
+            notification.style.borderRadius = '5px';
+            notification.style.zIndex = '10000';
+            notification.style.boxShadow = '0 3px 10px rgba(0,0,0,0.2)';
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transition = 'opacity 0.5s';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 500);
+            }, 2000);
+        }
+
+        // --- ORDER MODAL LOGIC ---
+        const orderBtns = document.querySelectorAll('.order-btn');
+        const orderModalBg = document.getElementById('orderModalBg');
+        const orderModal = document.getElementById('orderModal');
+        const closeOrderModal = document.getElementById('closeOrderModal');
+        const orderForm = document.getElementById('orderForm');
+        const locationInput = document.getElementById('locationInput');
+        const productInput = document.getElementById('productInput');
+        const amountInput = document.getElementById('amountInput');
+        const mpesaInfo = document.getElementById('mpesaInfo');
+        const mpesaAmount = document.getElementById('mpesaAmount');
+        const orderSuccessMsg = document.getElementById('orderSuccessMsg');
+        const orderTitle = document.getElementById('orderTitle');
+        const orderDetails = document.getElementById('orderDetails');
+        let activeCountry = '';
+        let activeProduct = '';
+        let activeAmount = '';
+        
+        // Order from stores
+        orderBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                activeCountry = this.getAttribute('data-country');
+                orderTitle.textContent = 'Order from ' + activeCountry;
+                locationInput.value = activeCountry;
+                productInput.value = '';
+                amountInput.value = '';
+                orderForm.reset();
+                orderDetails.value = '';
+                mpesaInfo.style.display = 'block';
+                mpesaAmount.innerHTML = '';
+                orderSuccessMsg.style.display = "none";
+                orderForm.style.display = "block";
+                orderModalBg.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                orderModal.focus();
+            });
+        });
+        
+        closeOrderModal.addEventListener('click', closeOrderPopup);
+        orderModalBg.addEventListener('click', function(e) {
+            if (e.target === orderModalBg) closeOrderPopup();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && orderModalBg.classList.contains('active')) {
+                closeOrderPopup();
+            }
+        });
+        function closeOrderPopup() {
+            orderModalBg.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        // --- Order form submit with AJAX for Formspree ---
+        orderForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(orderForm);
+            fetch(orderForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    orderForm.style.display = "none";
+                    orderSuccessMsg.style.display = "block";
+                    // Clear cart after successful order
+                    cart = [];
+                    updateCart();
+                    setTimeout(closeOrderPopup, 2400);
+                } else {
+                    orderSuccessMsg.textContent = "Oops! Something went wrong.";
+                    orderSuccessMsg.style.color = "#ff6b6b";
+                    orderSuccessMsg.style.display = "block";
+                }
+            });
+        });
+
+        // --- Newsletter Subscribe Form with AJAX for Formspree ---
+        const newsletterForm = document.getElementById('newsletterForm');
+        const newsletterSuccess = document.getElementById('newsletterSuccess');
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(newsletterForm);
+            const email = newsletterForm.email.value;
+            fetch(newsletterForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    newsletterForm.style.display = "none";
+                    newsletterSuccess.style.display = "block";
+                    newsletterSuccess.innerHTML = `Subscribed: <b>${email}</b>`;
+                } else {
+                    newsletterSuccess.style.display = "block";
+                    newsletterSuccess.textContent = "Subscription failed. Try again.";
+                    newsletterSuccess.style.color = "#ff6b6b";
+                }
+            });
+        });
+
+        // Product filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const menuItems = document.querySelectorAll('.menu-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filter = button.getAttribute('data-filter');
+                
+                menuItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Animated counter
+        const counters = document.querySelectorAll('.counter-number');
+        let counterStarted = false;
+
+        function startCounters() {
+            if (counterStarted) return;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                let count = +counter.innerText;
+                const increment = Math.max(1, Math.floor(target / 100));
+                
+                function updateCounter() {
+                    if (count < target) {
+                        count += increment;
+                        if (count > target) count = target;
+                        counter.innerText = count;
+                        setTimeout(updateCounter, 20);
+                    } else {
+                        counter.innerText = target;
+                    }
+                }
+                updateCounter();
+            });
+            
+            counterStarted = true;
+        }
+
+        // Check if counters are in view
+        function checkCounterView() {
+            const counterSection = document.querySelector('.parallax-section');
+            const sectionTop = counterSection.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (sectionTop < windowHeight - 100) {
+                startCounters();
+            }
+        }
+
+        window.addEventListener('scroll', checkCounterView);
+        window.addEventListener('DOMContentLoaded', checkCounterView);
+
+        // Initialize cart
+        updateCart();
+    </script>
+</body>
+</html>
